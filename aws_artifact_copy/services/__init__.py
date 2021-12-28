@@ -1,0 +1,1 @@
+SERVICES = frozenset({"ecr"})
