@@ -7,7 +7,7 @@ from .services import SERVICES
 
 
 def get_args(argv=None):
-    parser = argparse.ArgumentParser("aws-artifact-deploy")
+    parser = argparse.ArgumentParser()
     parser.add_argument("service", choices=SERVICES)
     return parser.parse_known_args(argv)
 

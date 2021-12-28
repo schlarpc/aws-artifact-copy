@@ -1,6 +1,8 @@
 import argparse
 import hashlib
 import json
+import os
+import sys
 import tarfile
 
 import trio
@@ -128,7 +130,7 @@ async def upload_image(args: argparse.Namespace) -> str:
 
 
 def get_args(argv):
-    parser = argparse.ArgumentParser("aws-artifact-deploy ecr")
+    parser = argparse.ArgumentParser(f"{os.path.basename(sys.argv[0])} ecr")
     parser.add_argument("source")
     parser.add_argument(
         "--format", choices=["nixpkgs-streamlayeredimage"], required=True
